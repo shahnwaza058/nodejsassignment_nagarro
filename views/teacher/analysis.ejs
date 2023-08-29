@@ -1,0 +1,94 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <div class="left">
+    <a href="/teacher/add" class="btn btn-primary" style="margin-top: 5px"
+      >Add Student</a
+    >
+    <a href="/teacher/viewall" class="btn btn-primary" style="margin-top: 5px"
+      >Home</a
+    >
+  </div>
+
+  <div class="right">
+    <a
+      onclick="logout()"
+      href="/teacher/logout"
+      class="btn btn-danger text-white"
+      style="margin-top: 5px"
+      >Logout</a
+    >
+  </div>
+</div>
+<h4>Analysis</h4>
+<br />
+<br />
+<div class="row m-2">
+  <div class="col-md-5">
+    <h5>Percentage of Failed Students</h5>
+    <div class="progress" style="margin-bottom: 2rem">
+      <div
+        class="progress-bar bg-danger"
+        role="progressbar"
+        style="width: <%= failedPercentage %>%"
+        aria-valuenow="<%= failedPercentage %>"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <%= failedPercentage.toFixed(2) %>%
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-6">
+    <h5>Score Distribution</h5>
+    <ul class="list-group">
+      <% scoreDistribution.forEach(item => { %>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <%= item.range %> Score
+        <span class="badge bg-primary rounded-pill small"
+          ><%= item.count %></span
+        >
+      </li>
+      <% }) %>
+    </ul>
+  </div> -->
+  <div class="col-md-7">
+    <div style="width: 90%; margin: auto">
+      <h5>Score Distribution</h5>
+      <canvas id="scoreChart" width="200" height="100"></canvas>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var scoreDistributionData = `<%=encodedScoreDistribution %>`;
+  var encodedData = "<%= encodedScoreDistribution %>";
+  var decodedData = JSON.parse(decodeURIComponent(encodedData));
+
+  var labels = decodedData.map((item) => item.range);
+  var data = decodedData.map((item) => item.count);
+
+  var ctx = document.getElementById("scoreChart").getContext("2d");
+  var myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Score Distribution",
+          data: data,
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>

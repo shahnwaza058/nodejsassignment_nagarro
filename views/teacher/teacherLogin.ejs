@@ -1,0 +1,42 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <a href="/" class="btn btn-primary" style="margin-top: 5px">Back</a>
+</div>
+<h3>Teacher Login</h3>
+<% if (error) { %>
+<div class="error-message text-danger text-center"><%= error %></div>
+<script>
+  alert("<%= error %>");
+</script>
+<% } %>
+<!-- Your login form here -->
+
+<div class="teachLog">
+  <form method="POST" class="teachForm">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name : </label>
+      <input type="text" name="username" class="form-control" id="username" />
+      <label for="exampleInputPassword1" class="form-label">Password : </label>
+      <input type="password" name="password" class="form-control" id="pass" />
+      <br />
+      <div class="showpassword">
+        <input type="checkbox" onclick="myFunction()" />
+        <label for="exampleInputPassword1" class="form-label"
+          >show password
+        </label>
+      </div>
+
+      <br />
+    </div>
+    <a><button type="submit" class="btn btn-primary">Submit</button></a>
+  </form>
+</div>
+<script>
+  function myFunction() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>

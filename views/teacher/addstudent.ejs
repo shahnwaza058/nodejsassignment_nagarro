@@ -1,0 +1,62 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <a href="/teacher/viewall" class="btn btn-primary" style="margin-top: 5px"
+    >Home</a
+  >
+  <a
+    onclick="logout()"
+    href="/teacher/logout"
+    class="btn btn-danger text-white"
+    style="margin-top: 5px"
+    >Logout</a
+  >
+</div>
+<form method="POST" class="addStu" autocomplete="off">
+  <h4>Add Student-Result</h4>
+  <div class="mt-5">
+    <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+    <input
+      type="number"
+      name="roll"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name : </label>
+    <input
+      type="text"
+      name="name"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
+    <input
+      type="date"
+      name="dob"
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Score : </label>
+    <input
+      type="number"
+      name="score"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Add</button>
+  <a href="/teacher/viewall" class="btn btn-primary">View All</a>
+</form>
+<script>
+  function logout() {
+    alert("Logout Successfully!");
+  }
+</script>

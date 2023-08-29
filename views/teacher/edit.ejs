@@ -1,0 +1,66 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <a href="/teacher/viewall" class="btn btn-primary" style="margin-top: 5px"
+    >Home</a
+  >
+  <a
+    onclick="logout()"
+    href="/teacher/logout"
+    class="btn btn-danger text-white"
+    style="margin-top: 5px"
+    >Logout</a
+  >
+</div>
+<h4>Editing Form for Student :<%= user.name %></h4>
+<form method="POST" class="addStu" autocomplete="off">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name : </label>
+    <input
+      type="text"
+      name="name"
+      required
+      class="form-control"
+      value="<%= user.name%>"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="roll" class="form-label">Roll No. : </label>
+    <input
+      type="number"
+      name="roll"
+      value="<%= user.roll%>"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="dob" class="form-label">Date of Birth : </label>
+    <input
+      type="date"
+      name="dob"
+      value="<%= dob%>"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="score" class="form-label">Score : </label>
+    <input
+      type="number"
+      name="score"
+      value="<%= user.score%>"
+      required
+      class="form-control"
+      id="exampleInputEmail1"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
+<script>
+  function logout() {
+    alert("Logout Successfully!");
+  }
+</script>

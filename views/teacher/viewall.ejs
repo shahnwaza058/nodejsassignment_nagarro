@@ -1,0 +1,122 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <div class="left">
+    <a href="/teacher/add" class="btn btn-primary" style="margin-top: 5px"
+      >Add Student</a
+    >
+    <a href="/teacher/analysis" class="btn btn-warning" style="margin-top: 5px"
+      >Analysis</a
+    >
+  </div>
+  <div class="right">
+    <a
+      onclick="logout()"
+      href="/teacher/logout"
+      class="btn btn-danger text-white"
+      style="margin-top: 5px"
+      >Logout</a
+    >
+  </div>
+</div>
+
+<h4>All Students</h4>
+<div class="tableDiv mt-5">
+  <% if (message) { %>
+  <div class="success text-warning text-center text-capitalize">
+    <%= message %>
+  </div>
+  <script>
+    alert("<%= message %>");
+  </script>
+  <% } %>
+  <div class="totalstudent">
+    <p style="font-weight: 500">Total Students:<%=noOfStudent %></p>
+  </div>
+
+  <div class="table_searchbox">
+    <div class="input-group mb-3 search-box">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">🔍</span>
+      </div>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name or roll number..."
+        class="form-control"
+        onkeyup="searchTable()"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Roll No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Score</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% student.forEach(element => { %>
+        <tr class="head">
+          <td><%= element.roll %></td>
+          <td><%= element.name %></td>
+          <td><%= element.dob.toISOString().split("T")[0] %></td>
+          <td><%= element.score %></td>
+          <td>
+            <button type="button" class="btn btn-primary">
+              <a
+                href="/teacher/edit/<%= element._id %> "
+                style="text-decoration: none; color: #fff"
+              >
+                Edit✏️
+              </a>
+            </button>
+            <button type="button" class="btn btn-danger">
+              <a
+                href="/teacher/delete/<%= element._id %> "
+                style="text-decoration: none; color: #fff"
+              >
+                Delete❌
+              </a>
+            </button>
+          </td>
+        </tr>
+        <%}) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function logout() {
+    alert("Logout successfully!");
+  }
+</script>
+<script>
+  function searchTable() {
+    var input, filter, table, tr, tdName, tdRoll, i, txtValueName, txtValueRoll;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.querySelector(".table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      tdName = tr[i].getElementsByTagName("td")[1]; // Column index for student name
+      tdRoll = tr[i].getElementsByTagName("td")[0]; // Column index for roll number
+      if (tdName && tdRoll) {
+        txtValueName = tdName.textContent || tdName.innerText;
+        txtValueRoll = tdRoll.textContent || tdRoll.innerText;
+        if (
+          txtValueName.toUpperCase().indexOf(filter) > -1 ||
+          txtValueRoll.toUpperCase().indexOf(filter) > -1
+        ) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>

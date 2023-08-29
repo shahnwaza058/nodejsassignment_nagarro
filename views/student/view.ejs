@@ -1,0 +1,45 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <a href="/student/login" class="btn btn-primary" style="margin-top: 5px"
+    >Back</a
+  >
+</div>
+
+<div class="stuTable mt-5">
+  <h4>My Result</h4>
+  <div
+    class="d-flex flex-column justify-content-center align-item-center text-center border p-3 rounded"
+  >
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="name" style="font-weight: 500">Name: </label>
+          <span id="name"><%= one.name %> </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="roll" style="font-weight: 500">Roll:</label>
+          <span id="roll"><%= one.roll %> </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="dob" style="font-weight: 500">Date of birth:</label>
+          <span id="dob"><%= one.dob.toISOString().split("T")[0] %> </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="score" style="font-weight: 500">Score:</label>
+          <span id="score"><%=one.score%></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

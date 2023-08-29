@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 10px 19px rgba(0, 0, 0, 0.353);
+  box-sizing: border-box;
+}
+.navbar {
+  box-shadow: 7px -5px 20px 0px rgba(0, 0, 0, 0.597);
+  background-color: rgb(150, 233, 135);
+  width: 100%;
+  text-align: center !important;
+}
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.navbar-brand:hover {
+  color: rgba(11, 11, 11, 0.758);
+}
+.text {
+  text-align: center;
+  font: bolder 1.2rem arial;
+  padding: 2rem;
+}
+.btn {
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.optionDiv {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.teachLog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.teachForm {
+  min-width: 50%;
+  border: 1px solid rgba(0, 128, 0, 0.318);
+  padding: 60px 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 10px 19px rgba(0, 128, 0, 0.318);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.tableDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  text-align: center;
+  box-shadow: 1px 10px 19px rgba(0, 128, 0, 0.318);
+}
+.addStu {
+  border-width: 2px;
+  width: 60%;
+  margin: auto;
+  border-radius: 10px;
+}
+.stuTable {
+  box-shadow: 1px 10px 19px rgba(0, 128, 0, 0.318);
+  border-width: 2px;
+  width: 90%;
+  margin: auto;
+  padding: 60px 40px;
+  border-radius: 10px;
+}
+h4 {
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.showpassword input {
+  text-align: left !important;
+}
+
+.table_searchbox {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-box {
+  width: 100%;
+  margin: 0.5rem 0;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+.search-box input {
+  transition: all 0.2s ease-out;
+  padding: 5px 10px;
+  width: 30%;
+  border-radius: 10px;
+  font-size: large;
+  border: none;
+  border: 1px solid rgba(0, 128, 0, 0.353);
+}
+.search-box input:focus {
+  box-shadow: 10px 1px 19px rgba(0, 128, 0, 0.175);
+  outline: 1px double rgba(0, 128, 0, 0.353) !important;
+}

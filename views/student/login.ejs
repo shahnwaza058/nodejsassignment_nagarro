@@ -1,0 +1,33 @@
+<div class="topbutton d-flex justify-content-between" style="margin: 0 1rem">
+  <a href="/" class="btn btn-primary" style="margin-top: 5px">Back</a>
+</div>
+<h3>Student Login</h3>
+<% if (error) { %>
+<div class="error-message text-danger text-center"><%= error %></div>
+<script>
+  alert("<%= error %>");
+</script>
+<% } %>
+<div class="teachLog">
+  <form method="POST" class="teachForm">
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Roll no : </label>
+      <input
+        type="number"
+        name="roll"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Date of Birth :
+      </label>
+      <input
+        type="date"
+        name="dob"
+        class="form-control"
+      />
+    </div>
+    <a><button type="submit" class="btn btn-primary">Submit</button></a>
+  </form>
+</div>
