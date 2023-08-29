@@ -36,13 +36,16 @@ Teachers have access to a wider range of functionalities:
 <img width="476" alt="Screenshot 2023-08-29 143826" src="https://github.com/shahnwaza058/nodejsassignment_nagarro/assets/138658659/239d1c8f-a5a6-4bb3-ae5a-ede194b9facc">
 <img width="481" alt="Screenshot 2023-08-29 143814" src="https://github.com/shahnwaza058/nodejsassignment_nagarro/assets/138658659/c32b1f0b-a071-43f3-b234-06fc337d7815">
 
+- **Chart Visualization:** The application utilizes Chart.js to display charts representing percentage ranges and the number of students who achieved those percentages.
+<img width="960" alt="Screenshot 2023-08-29 143724" src="https://github.com/shahnwaza058/nodejsassignment_nagarro/assets/138658659/ec9bcd91-5fbb-49d8-a960-f0b5b5342718">
+
 ## Installation and Setup
 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/result-management-app.git
-   cd result-management-app
+   git clone https://github.com/shahnwaza058/nodejsassignment_nagarro.git
+   cd nodejsassignment_nagarro
    ```
 
 2. **Install Dependencies:**
@@ -57,7 +60,8 @@ Teachers have access to a wider range of functionalities:
 
    ```plaintext
    PORT=3000
-   DB_CONNECTION_STRING=your_database_connection_string
+   MONGO_URI=your_database_connection_string
+   JWT_SECRET=your_JWT_SECRET
    ```
 
 4. **Start the Application:**
@@ -72,6 +76,8 @@ Teachers have access to a wider range of functionalities:
 
 - **HTML:** Used for structuring the web pages and forms.
 - **CSS:** Used for styling the user interface and making the application visually appealing.
+- **MongoDB:** Used as the database to store student and result information.
+- **EJS:** Used as the template engine for generating dynamic HTML content.
 - **JavaScript:** Used for client-side interactivity and form validation.
 - **Node.js:** Used for building the backend server that handles authentication and database operations.
-
+- **Chart.js:** Used for creating interactive and visually appealing charts to represent data.
